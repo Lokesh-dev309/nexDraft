@@ -50,9 +50,11 @@ export default function Header({ activePage, setActivePage, theme, toggleTheme }
             className="flex items-center gap-2 text-left hover:opacity-90 transition-opacity"
             id="brand-logo-btn"
           >
-            <span className="material-symbols-outlined text-construction-orange text-2xl hidden md:inline-block">
-              architecture
-            </span>
+            <img
+              src="/logo23.png"
+              alt="NexDraft Logo"
+              className="w-12 h-12 object-contain"
+             />
             <h1 className="font-display text-2xl font-bold tracking-tight text-on-surface">
               NexDraft
             </h1>

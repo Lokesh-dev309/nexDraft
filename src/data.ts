@@ -38,7 +38,7 @@ import { ServiceCard, ExpertiseCard, WorkflowPhase, ProjectItem, TestimonialItem
  */
 
 // Global high-contrast background & technical blueprints
-export const HERO_BACKGROUND = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80'; // Modern skyscraper framework under construction
+export const HERO_BACKGROUND = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCIHJXfnN8CLc-e6Kdpt7X5SXcABrkD7eSZO_0EZzCGjOtaxyNDoedZAYlWm2x6ls9Lf8komAtAHg-qPGLhtXCCCh-gKei6qQDVbhjvdzuIxWieEdFlv_Yg_Fkf-rqgHFrKThOaq3GoYB1oVYGYwNXXnVWTRORF2QITIZKRxJx_tFMioir2eGoeVwXALSSexcIySpi1fVhaS5IZp_6tTJ3kgWjbpZadOYQuW-B_4ZPzU5SEcvr9yGaI2pb7Ok8R9IInY1BvvOM8Ew'; // Modern skyscraper framework under construction
 export const STEEL_BLUEPRINT_IMAGE = 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80'; // Professional engineering blueprints and tablet
 export const MAP_IMAGE = 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80'; // High tech blueprint connectivity background
 
