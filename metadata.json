@@ -1,0 +1,6 @@
+{
+  "name": "NexDraft",
+  "description": "Professional Steel Building Design & Engineering Services",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
