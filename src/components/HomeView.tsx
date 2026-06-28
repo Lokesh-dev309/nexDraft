@@ -62,7 +62,7 @@ export default function HomeView({ setActivePage, onSubmitInquiry }: HomeViewPro
           <img
             src={HERO_BACKGROUND}
             alt="Structural steel skyscraper construction"
-            className="w-full h-full object-cover brightness-45"
+            className="w-full h-full object-cover brightness-100"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background"></div>
@@ -108,7 +108,7 @@ export default function HomeView({ setActivePage, onSubmitInquiry }: HomeViewPro
         </div>
 
         {/* CAD Blueprint Grid Overlay */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(#ffffff 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
+        <div className="absolute inset-0 pointer-events-none opacity-[0.0511]" style={{ backgroundImage: 'radial-gradient(#ffffff 0.5px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
       </section>
 
       {/* 2. Company Overview */}

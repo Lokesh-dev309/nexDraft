@@ -38,9 +38,9 @@ import { ServiceCard, ExpertiseCard, WorkflowPhase, ProjectItem, TestimonialItem
  */
 
 // Global high-contrast background & technical blueprints
-export const HERO_BACKGROUND = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCIHJXfnN8CLc-e6Kdpt7X5SXcABrkD7eSZO_0EZzCGjOtaxyNDoedZAYlWm2x6ls9Lf8komAtAHg-qPGLhtXCCCh-gKei6qQDVbhjvdzuIxWieEdFlv_Yg_Fkf-rqgHFrKThOaq3GoYB1oVYGYwNXXnVWTRORF2QITIZKRxJx_tFMioir2eGoeVwXALSSexcIySpi1fVhaS5IZp_6tTJ3kgWjbpZadOYQuW-B_4ZPzU5SEcvr9yGaI2pb7Ok8R9IInY1BvvOM8Ew'; // Modern skyscraper framework under construction
-export const STEEL_BLUEPRINT_IMAGE = 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80'; // Professional engineering blueprints and tablet
-export const MAP_IMAGE = 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80'; // High tech blueprint connectivity background
+export const HERO_BACKGROUND = '/Hero11.jpg'; // Modern skyscraper framework under construction
+export const STEEL_BLUEPRINT_IMAGE = '/Service1.jpg'; // Professional engineering blueprints and tablet
+export const MAP_IMAGE = 'Map1.png'; // World map with pinpointed locations
 
 /**
  * Core Service Offerings
@@ -130,10 +130,10 @@ export const WORKFLOW_PHASES: WorkflowPhase[] = [
 export const RECENT_PROJECTS: ProjectItem[] = [
   {
     id: 'proj-metropolis',
-    title: 'Metropolis Logistics Warehouse',
+    title: 'Siddhartha Grease (Maharashtra) 900 MT',
     description: 'High-cube structural steel framework detailing and wind load optimization.',
     category: 'Steel',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80', // High quality modern warehouse logistics framework
+    image: "/Re1.png", // High quality modern warehouse logistics framework
     detailText: 'Full high-strength connection detailing, wind load calculations following ASCE 7-16, and construction-ready shop assemblies for a high-cube industrial warehouse distribution center spanning 45,000 sqm.',
     tonnage: '420 MT',
     location: 'Houston, TX',
@@ -142,10 +142,10 @@ export const RECENT_PROJECTS: ProjectItem[] = [
   },
   {
     id: 'proj-techhq',
-    title: 'Innovatech corporate HQ',
+    title: 'FOB-CD Chowk Gurugram',
     description: 'Ergonomic interior space optimization and custom collaborative workstations.',
     category: 'Interiors',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80', // Beautiful modern office interior space
+    image: "/Re2.png", // Beautiful modern office interior space
     detailText: 'Spatial zoning, acoustics modeling, and custom-engineered modular collaborative workstation configurations for a massive 4-story tech corporate headquarters.',
     location: 'Silicon Valley, CA',
     client: 'Innovatech Corp',
@@ -153,10 +153,10 @@ export const RECENT_PROJECTS: ProjectItem[] = [
   },
   {
     id: 'proj-geardrive',
-    title: 'Compact Gear Drive Assembly',
+    title: 'Pune Metro Station 800MT',
     description: 'High-precision mechanical component design with structural stress limit analysis.',
-    category: 'CAD',
-    image: 'https://images.unsplash.com/photo-1537462715879-360eeb61a0bc?auto=format&fit=crop&w=800&q=80', // Mechanical engineering high precision planetary gear assembly
+    category: 'Steel',
+    image: "/Re3.png", // Mechanical engineering high precision planetary gear assembly
     detailText: 'SolidWorks parametric CAD modeling for high-load planetary gears with rigorous structural stress simulations, physical alignment analysis, and 100% accurate thermal expansion compensation.',
     location: 'Munich, Germany',
     client: 'Krupp Industrial Systems',
@@ -170,26 +170,26 @@ export const RECENT_PROJECTS: ProjectItem[] = [
 export const SERVICE_SHOWCASES: ProjectItem[] = [
   {
     id: 'show-warehouse',
-    title: 'Global Logistics Hub Phase II',
+    title: 'Siddhartha Grease (Maharashtra) 900 MT',
     description: 'Industrial frame detailing and connection calculations.',
     category: 'Steel',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+    image: '/Re1.png', // Modern warehouse logistics framework
     detailText: 'Comprehensive Tekla detailing spanning over 40,000 square meters. Complete structural analysis utilizing high-strength steel grades and modular assembly configurations.'
   },
   {
     id: 'show-factory',
-    title: 'Heavy Industry Gantry Structure',
+    title: 'FOB-CD Chowk Gurugram',
     description: 'Deflection-critical heavy gantry support engineering.',
     category: 'Steel',
-    image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=800&q=80',
+    image: '/Re2.png', // Heavy industry gantry structure
     detailText: 'Overhead traveling crane supporting columns and structural design. Adheres to strict deflection limits to ensure safety and equipment alignment.'
   },
   {
     id: 'show-tower',
-    title: 'Skyline Premium Commercial Tower',
+    title: 'Pune Metro Station 800MT',
     description: 'Seismic moment-resistant skeleton framework design.',
     category: 'Steel',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+    image: '/Re3.png', // High-rise commercial tower
     detailText: 'High-rise structural skeleton utilizing seismic-resistant moment frames and buckling-restrained braces to meet strict building codes.'
   }
 ];
@@ -201,29 +201,27 @@ export const SERVICE_SHOWCASES: ProjectItem[] = [
 export const PORTFOLIO_PROJECTS: ProjectItem[] = [
   {
     id: 'port-1',
-    title: 'Aura Commercial Skyway',
+    title: 'Siddhartha Grease (Maharashtra) 900 MT',
     description: 'High-density structural steel framework for a 45-story commercial skyscraper using moment-resistant joints.',
     category: 'Steel',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80', // Glass and steel skyscraper skeleton
+    image: '/Re1.png', // Glass and steel skyscraper skeleton
     tonnage: '3,200 MT',
     client: 'Apex Commercial Properties',
-    location: 'Chicago, IL',
-    year: '2025',
-    compliance: 'AISC 360-22, ASCE 7-22, AWS D1.1 (Welding Code)',
-    software: 'Tekla Structures v2024 / STAAD.Pro CONNECT Edition',
-    tolerances: 'Erection Accuracy Snapping (±0.005mm)',
-    deliverables: 'IFC BIM Models, Structural Analysis Reports, CNC-DSTV Files, 3D Tekla Assemblies',
+    location: 'Maharashtra, India',
+    year: '2023',
+   
+    
     detailText: 'Engineered high-rise structural stability with detailed wind-tunnel simulation models. Completed LOD 400 BIM coordinate modeling resolving over 400 potential clashes with HVAC, MEP, and elevator tracks.'
   },
   {
     id: 'port-2',
-    title: 'The Vertex Executive Suite',
+    title: 'TFOB-CD Chowk Gurugram',
     description: 'Bespoke interior architectural blueprints and ergonomic furniture integration for a modern financial headquarters.',
     category: 'Interiors',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80', // Executive workspace interior
+    image: '/Re2.png', // Executive workspace interior
     client: 'Vertex Asset Management',
-    location: 'New York, NY',
-    year: '2026',
+    location: 'Gurugram, Haryana',
+    year: '2022',
     compliance: 'ADA Compliance standards, LEED Green Building codes',
     software: 'Autodesk Revit BIM / 3ds Max / V-Ray Renderer',
     tolerances: 'Spatial Layout Tolerance (±1.00mm)',
@@ -232,13 +230,13 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
   },
   {
     id: 'port-3',
-    title: 'Heavy Industry Gear Drive Assembly',
+    title: 'EPCM SERVICES FOR CRU, IOCL GUWAHATI REFINERY 500MT',
     description: 'Precision CAD drafting and stress testing for power transmission mechanical planetary gear systems.',
     category: 'CAD',
-    image: 'https://images.unsplash.com/photo-1537462715879-360eeb61a0bc?auto=format&fit=crop&w=800&q=80', // High-precision steel manufacturing
+    image: '/Re3.png', // High-precision steel manufacturing
     client: 'Henschel Heavy Engineering Corp',
-    location: 'Detroit, MI',
-    year: '2025',
+    location: 'Guwahati, Assam',
+    year: '2024',
     compliance: 'ISO 1328 (Cylindrical Gears), ASME Y14.5 (GD&T)',
     software: 'SolidWorks Professional v2024 / ANSYS Workbench',
     tolerances: 'Ultra-Precision Fit (0.01mm limit deviation)',
@@ -247,12 +245,12 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
   },
   {
     id: 'port-4',
-    title: 'Omni Workspace Modular System',
+    title: 'Mini Millet Factory (Rise Mill)',
     description: 'Industrial workspace furniture design focusing on scalable configurations, steel frames, and durable surfaces.',
     category: 'Furniture',
-    image: 'https://images.unsplash.com/photo-1517502884422-41eaaced0168?auto=format&fit=crop&w=800&q=80', // Modern workplace desk setup
+    image: '/Re4.png', // Modern workplace desk setup
     client: 'Modular Labs Furniture LLC',
-    location: 'Seattle, WA',
+    location: 'Pune, Maharashtra',
     year: '2024',
     compliance: 'BIFMA X5.5 (Desk Products), ISO 9001 quality specifications',
     software: 'SolidWorks Sheet Metal / Keyshot Pro',
@@ -262,13 +260,13 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
   },
   {
     id: 'port-5',
-    title: 'Pacific Heights Pedestrian Flyover',
+    title: 'Platform Structure',
     description: 'Structural steel detailing and joint calculations for an architectural steel arch bridge.',
     category: 'Steel',
-    image: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=800&q=80', // Steel arch pedestrian bridge
+    image: '/Re6.png', // Steel arch pedestrian bridge
     tonnage: '185 MT',
     client: 'San Francisco Transit Department',
-    location: 'San Francisco, CA',
+    location: 'gurugram, Haryana',
     year: '2025',
     compliance: 'AASHTO LRFD Bridge Specifications, AISC Steel Bridge Detailing Guide',
     software: 'Tekla Structures / Bentley RM Bridge',

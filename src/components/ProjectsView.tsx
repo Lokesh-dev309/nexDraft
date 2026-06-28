@@ -3,46 +3,55 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
-import { PORTFOLIO_PROJECTS } from '../data';
-import { ProjectItem, ActivePage } from '../types';
+import { useState } from "react";
+import { PORTFOLIO_PROJECTS } from "../data";
+import { ProjectItem, ActivePage } from "../types";
 
 interface ProjectsViewProps {
   setActivePage: (page: ActivePage) => void;
   setContactPreFill: (serviceName: string) => void;
 }
 
-export default function ProjectsView({ setActivePage, setContactPreFill }: ProjectsViewProps) {
+export default function ProjectsView({
+  setActivePage,
+  setContactPreFill,
+}: ProjectsViewProps) {
   // Category Filtering States
-  const [activeCategory, setActiveCategory] = useState<'All' | 'Steel' | 'Furniture' | 'Interiors' | 'CAD'>('All');
-  
+  const [activeCategory, setActiveCategory] = useState<
+    "All" | "Steel" | "Furniture" | "Interiors" | "CAD"
+  >("All");
+
   // Project Search State
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   // Project Detail Modal State
-  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(
+    null,
+  );
 
   // Filter projects based on active tab and search query
   const filteredProjects = PORTFOLIO_PROJECTS.filter((proj) => {
-    const matchesCategory = activeCategory === 'All' || proj.category === activeCategory;
-    const matchesSearch = proj.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          proj.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory =
+      activeCategory === "All" || proj.category === activeCategory;
+    const matchesSearch =
+      proj.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      proj.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
-  const categories: ('All' | 'Steel' | 'Furniture' | 'Interiors' | 'CAD')[] = [
-    'All',
-    'Steel',
-    'Furniture',
-    'Interiors',
-    'CAD'
+  const categories: ("All" | "Steel" | "Furniture" | "Interiors" | "CAD")[] = [
+    "All",
+    "Steel",
+    "Furniture",
+    "Interiors",
+    "CAD",
   ];
 
   const handleInquireProject = (proj: ProjectItem) => {
     setContactPreFill(`${proj.category} Project Inquiry: ${proj.title}`);
     setSelectedProject(null);
-    setActivePage('contact');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setActivePage("contact");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -59,14 +68,19 @@ export default function ProjectsView({ setActivePage, setContactPreFill }: Proje
           Engineering Excellence Portfolio
         </h2>
         <p className="font-sans text-base text-on-surface-variant max-w-xl leading-relaxed">
-          Exploring structural integrity and aesthetic precision through our curated selection of drafting, high-performance manufacturing modeling, and space design achievements.
+          Exploring structural integrity and aesthetic precision through our
+          curated selection of drafting, high-performance manufacturing
+          modeling, and space design achievements.
         </p>
       </section>
 
       {/* Interactive Search Bar & Filters Layout */}
       <div className="mb-10 flex flex-col md:flex-row gap-6 md:items-center justify-between pb-4 border-b border-outline-variant/30">
         {/* Filter Navigation Bar */}
-        <nav aria-label="Project category filters" className="flex overflow-x-auto gap-3.5 no-scrollbar scroll-smooth py-1 select-none">
+        <nav
+          aria-label="Project category filters"
+          className="flex overflow-x-auto gap-3.5 no-scrollbar scroll-smooth py-1 select-none"
+        >
           {categories.map((cat) => {
             const isActive = activeCategory === cat;
             return (
@@ -77,15 +91,17 @@ export default function ProjectsView({ setActivePage, setContactPreFill }: Proje
                   // Quick subtle scale microinteraction
                   const target = document.getElementById(`filter-chip-${cat}`);
                   if (target) {
-                    target.style.transform = 'scale(0.95)';
-                    setTimeout(() => { target.style.transform = 'scale(1)'; }, 100);
+                    target.style.transform = "scale(0.95)";
+                    setTimeout(() => {
+                      target.style.transform = "scale(1)";
+                    }, 100);
                   }
                 }}
                 id={`filter-chip-${cat}`}
                 className={`whitespace-nowrap px-6 py-2 rounded-full font-mono text-xs tracking-wide transition-all cursor-pointer ${
                   isActive
-                    ? 'bg-primary text-on-primary font-bold shadow-lg shadow-primary/10'
-                    : 'bg-surface-container-high border border-outline-variant/50 text-on-surface-variant hover:border-primary/60 hover:text-on-surface'
+                    ? "bg-primary text-on-primary font-bold shadow-lg shadow-primary/10"
+                    : "bg-surface-container-high border border-outline-variant/50 text-on-surface-variant hover:border-primary/60 hover:text-on-surface"
                 }`}
               >
                 {cat}
@@ -108,7 +124,7 @@ export default function ProjectsView({ setActivePage, setContactPreFill }: Proje
           </span>
           {searchQuery && (
             <button
-              onClick={() => setSearchQuery('')}
+              onClick={() => setSearchQuery("")}
               className="absolute right-3 top-2.5 text-outline hover:text-on-surface"
               aria-label="Clear Search"
             >
@@ -121,17 +137,22 @@ export default function ProjectsView({ setActivePage, setContactPreFill }: Proje
       {/* 2. Masonry-Like Portfolio Grid */}
       {filteredProjects.length === 0 ? (
         <div className="py-20 text-center border border-dashed border-outline-variant/50 rounded-xl space-y-4">
-          <span className="material-symbols-outlined text-outline text-5xl">folder_off</span>
+          <span className="material-symbols-outlined text-outline text-5xl">
+            folder_off
+          </span>
           <div className="space-y-1">
-            <h4 className="font-display text-lg font-bold text-on-surface">No Blueprints Found</h4>
+            <h4 className="font-display text-lg font-bold text-on-surface">
+              No Blueprints Found
+            </h4>
             <p className="font-sans text-sm text-on-surface-variant">
-              No projects matched the search filters. Try resetting the category or query.
+              No projects matched the search filters. Try resetting the category
+              or query.
             </p>
           </div>
           <button
             onClick={() => {
-              setActiveCategory('All');
-              setSearchQuery('');
+              setActiveCategory("All");
+              setSearchQuery("");
             }}
             className="px-5 py-2 bg-surface-container border border-outline-variant rounded font-mono text-xs text-primary hover:bg-primary hover:text-on-primary hover:border-primary transition-all duration-200"
           >
@@ -153,7 +174,7 @@ export default function ProjectsView({ setActivePage, setContactPreFill }: Proje
                   alt={proj.title}
                   referrerPolicy="no-referrer"
                 />
-                
+
                 {/* Floating pill tags */}
                 <div className="absolute top-4 left-4 flex gap-2">
                   <span className="bg-background/85 backdrop-blur-md px-3.5 py-1 rounded font-mono text-[10px] text-primary border border-primary/20 font-semibold tracking-wider uppercase">
@@ -177,17 +198,55 @@ export default function ProjectsView({ setActivePage, setContactPreFill }: Proje
                     {proj.description}
                   </p>
                 </div>
-                
+
                 <button
                   onClick={() => setSelectedProject(proj)}
                   className="w-full py-3 bg-surface-container-highest border border-outline-variant text-on-surface font-mono text-xs uppercase tracking-wider hover:bg-primary hover:text-on-primary hover:border-primary transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>View Details</span>
-                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  <span className="material-symbols-outlined text-[16px]">
+                    arrow_forward
+                  </span>
                 </button>
               </div>
             </article>
           ))}
+
+          {/*  download project pdf and view details  in pdf form  */}
+          {/*  helo this is try block  */}
+
+
+          <div className=" h-full  w-full rounded-lg flex items-center justify-center">
+            
+            <div className="w-full flex justify-center items-center  px-6 py-16">
+              <div className="w-full max-w-md rounded-2xl border border-blue-500/20 bg-[#0d0d0d] p-8 shadow-[0_0_30px_rgba(59,130,246,0.15)]">
+                {/* Heading */}
+                <h2 className="text-3xl md:text-4xl font-bold text-center text-white">
+                  All Projects
+                </h2>
+
+                {/* Buttons */}
+                <div className="mt-10 flex flex-col gap-4">
+                  {/* View Button */}
+                  <a
+                    href="/Allprojects.pdf"
+                    className="w-full rounded-xl bg-blue-600 py-3.5 text-center font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95"
+                  >
+                    View Projects
+                  </a>
+
+                  {/* Download Button */}
+                  <a
+                    href="/Allprojects.pdf"
+                    download
+                    className="w-full rounded-xl border border-blue-500 py-3.5 text-center font-semibold text-blue-400 transition-all duration-300 hover:bg-blue-600 hover:text-white hover:border-blue-600 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95"
+                  >
+                    Download Portfolio
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
 
@@ -195,7 +254,6 @@ export default function ProjectsView({ setActivePage, setContactPreFill }: Proje
       {selectedProject && (
         <div className="fixed inset-0 z-[100] bg-background/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-6 animate-fade-in overflow-y-auto">
           <div className="bg-surface-container-low max-w-2xl w-full rounded-2xl border border-outline-variant p-6 md:p-8 space-y-6 shadow-2xl relative">
-            
             {/* Close trigger button */}
             <button
               onClick={() => setSelectedProject(null)}
@@ -217,7 +275,9 @@ export default function ProjectsView({ setActivePage, setContactPreFill }: Proje
                     SPEC WEIGHT: {selectedProject.tonnage}
                   </span>
                 )}
-                <span className="font-mono text-[10px] text-outline">LOD_VER: LOD400</span>
+                <span className="font-mono text-[10px] text-outline">
+                  LOD_VER: LOD400
+                </span>
               </div>
               <h3 className="font-display text-2xl md:text-3xl font-bold text-on-surface">
                 {selectedProject.title}
@@ -240,43 +300,60 @@ export default function ProjectsView({ setActivePage, setContactPreFill }: Proje
               <h4 className="font-mono text-xs font-bold text-primary uppercase tracking-widest border-b border-outline-variant/30 pb-1.5">
                 TECHNICAL DATA SPECIFICATIONS
               </h4>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 rounded bg-background border border-outline-variant/50 space-y-1 font-mono text-xs text-on-surface-variant">
-                  <div className="text-[10px] text-outline font-semibold uppercase">CLIENT &amp; LOCATION</div>
+                  <div className="text-[10px] text-outline font-semibold uppercase">
+                    CLIENT &amp; LOCATION
+                  </div>
                   <div className="text-on-surface font-bold text-xs">
-                    {selectedProject.client || 'Confidential Enterprise'} • {selectedProject.location || 'Global Delivery'} ({selectedProject.year || 'Recent'})
+                    {selectedProject.client || "Confidential Enterprise"} •{" "}
+                    {selectedProject.location || "Global Delivery"} (
+                    {selectedProject.year || "Recent"})
                   </div>
                 </div>
 
                 <div className="p-4 rounded bg-background border border-outline-variant/50 space-y-1 font-mono text-xs text-on-surface-variant">
-                  <div className="text-[10px] text-outline font-semibold uppercase">COMPLIANCE NORMS</div>
+                  <div className="text-[10px] text-outline font-semibold uppercase">
+                    COMPLIANCE NORMS
+                  </div>
                   <div className="text-on-surface font-bold text-xs">
-                    {selectedProject.compliance || 'AISC 360-16, ASCE 7-16, EN 1993, IS 800'}
+                    {selectedProject.compliance ||
+                      "AISC 360-16, ASCE 7-16, EN 1993, IS 800"}
                   </div>
                 </div>
 
                 <div className="p-4 rounded bg-background border border-outline-variant/50 space-y-1 font-mono text-xs text-on-surface-variant">
-                  <div className="text-[10px] text-outline font-semibold uppercase">DETAILING ACCURACY</div>
+                  <div className="text-[10px] text-outline font-semibold uppercase">
+                    DETAILING ACCURACY
+                  </div>
                   <div className="text-on-surface font-bold text-xs">
-                    {selectedProject.tolerances || 'Millimeter Snapping (±0.01mm)'}
+                    {selectedProject.tolerances ||
+                      "Millimeter Snapping (±0.01mm)"}
                   </div>
                 </div>
 
                 <div className="p-4 rounded bg-background border border-outline-variant/50 space-y-1 font-mono text-xs text-on-surface-variant">
-                  <div className="text-[10px] text-outline font-semibold uppercase">MODEL ENGINE SOFTWARE</div>
+                  <div className="text-[10px] text-outline font-semibold uppercase">
+                    MODEL ENGINE SOFTWARE
+                  </div>
                   <div className="text-on-surface font-bold text-xs">
-                    {selectedProject.software || (
-                      selectedProject.category === 'Steel' ? 'Tekla Structures / STAAD.Pro' : 
-                      selectedProject.category === 'CAD' ? 'SolidWorks / AutoCAD' : '3D Max / Revit BIM'
-                    )}
+                    {selectedProject.software ||
+                      (selectedProject.category === "Steel"
+                        ? "Tekla Structures / STAAD.Pro"
+                        : selectedProject.category === "CAD"
+                          ? "SolidWorks / AutoCAD"
+                          : "3D Max / Revit BIM")}
                   </div>
                 </div>
 
                 <div className="p-4 rounded bg-background border border-outline-variant/50 space-y-1 font-mono text-xs text-on-surface-variant md:col-span-2">
-                  <div className="text-[10px] text-outline font-semibold uppercase">DELIVERABLES FORMAT</div>
+                  <div className="text-[10px] text-outline font-semibold uppercase">
+                    DELIVERABLES FORMAT
+                  </div>
                   <div className="text-on-surface font-bold text-xs">
-                    {selectedProject.deliverables || 'DWG, IFC, DXF, Structural Calc PDF, Tekla NC Files'}
+                    {selectedProject.deliverables ||
+                      "DWG, IFC, DXF, Structural Calc PDF, Tekla NC Files"}
                   </div>
                 </div>
               </div>
@@ -294,7 +371,9 @@ export default function ProjectsView({ setActivePage, setContactPreFill }: Proje
                 id="inquire-project-btn"
               >
                 <span>Inquire About Design Specifications</span>
-                <span className="material-symbols-outlined text-[16px]">mail</span>
+                <span className="material-symbols-outlined text-[16px]">
+                  mail
+                </span>
               </button>
               <button
                 onClick={() => setSelectedProject(null)}
@@ -303,7 +382,6 @@ export default function ProjectsView({ setActivePage, setContactPreFill }: Proje
                 Close Spec Sheet
               </button>
             </div>
-
           </div>
         </div>
       )}

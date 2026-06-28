@@ -341,7 +341,7 @@ export default function ContactView({ preFilledDetails, onSubmitInquiry }: Conta
                 <div className="space-y-0.5">
                   <p className="font-mono text-xs font-bold text-on-surface">Headquarters</p>
                   <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
-                    1200 Innovation Way, Suite 400<br />San Francisco, CA 94105
+                   sector 37, Faridabad, Haryana, India<br /> India 121003
                   </p>
                 </div>
               </div>
@@ -353,7 +353,7 @@ export default function ContactView({ preFilledDetails, onSubmitInquiry }: Conta
                 </div>
                 <div className="space-y-0.5">
                   <p className="font-mono text-xs font-bold text-on-surface">Technical Support</p>
-                  <p className="font-sans text-xs text-on-surface-variant">+1 (415) 555-0128</p>
+                  <p className="font-sans text-xs text-on-surface-variant">+91 99718 85501</p>
                 </div>
               </div>
 
@@ -383,7 +383,7 @@ export default function ContactView({ preFilledDetails, onSubmitInquiry }: Conta
             </div>
             
             <a
-              href="https://wa.me/14155550128"
+              href="https://wa.me/919971885501"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2.5 w-full py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-mono text-xs font-bold rounded-lg shadow-xl active:scale-[0.98] transition-all uppercase tracking-wide cursor-pointer"
@@ -405,7 +405,7 @@ export default function ContactView({ preFilledDetails, onSubmitInquiry }: Conta
         <div className="relative h-64 w-full rounded-xl overflow-hidden border border-outline-variant shadow-md">
           <div className="absolute inset-0 bg-surface-container-highest">
             <img
-              className="w-full h-full object-cover grayscale opacity-60"
+              className="w-full h-full object-cover brightness-110 contrast-110 saturate-125"
               src={MAP_IMAGE}
               alt="Clean architectural map grid of San FranciscoFinancial District"
               referrerPolicy="no-referrer"
@@ -415,10 +415,10 @@ export default function ContactView({ preFilledDetails, onSubmitInquiry }: Conta
             {/* Compass badge details */}
             <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
               <span className="font-mono text-[10px] bg-background/80 backdrop-blur px-3 py-1.5 rounded border border-outline-variant/60 uppercase tracking-widest text-on-surface">
-                San Francisco HQ, CA
+                sector 37, Faridabad, Haryana, India
               </span>
               <a
-                href="https://maps.google.com/?q=San+Francisco+Financial+District"
+                href="https://www.google.com/maps/place/Sector+37,+Faridabad,+Haryana/@28.4794086,77.3014365,15z/data=!3m1!4b1!4m6!3m5!1s0x390ce71647de8197:0xe58a736ad59b2397!8m2!3d28.4810408!4d77.3116621!16s%2Fg%2F1tl1lv64?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary hover:bg-surface-tint text-on-primary p-2.5 rounded-full shadow-lg transition-colors flex items-center justify-center cursor-pointer"
